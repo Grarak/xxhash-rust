@@ -45,7 +45,7 @@ type StripeLanes = [[u8; mem::size_of::<core::arch::x86::__m128i>()]; STRIPE_LEN
 #[cfg(all(target_arch = "x86_64", target_feature = "sse2", not(target_feature = "avx2")))]
 type StripeLanes = [[u8; mem::size_of::<core::arch::x86_64::__m128i>()]; STRIPE_LEN / mem::size_of::<core::arch::x86_64::__m128i>()];
 #[cfg(target_feature = "neon")]
-type StripeLanes = [[u8; mem::size_of::<core::arch::aarch64::uint8x16_t>()]; STRIPE_LEN / mem::size_of::<core::arch::aarch64::uint8x16_t>()];
+type StripeLanes = [[u8; mem::size_of::<core::arch::arm::uint8x16_t>()]; STRIPE_LEN / mem::size_of::<core::arch::arm::uint8x16_t>()];
 
 #[cfg(any(target_feature = "sse2", target_feature = "avx2"))]
 #[inline]

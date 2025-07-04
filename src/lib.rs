@@ -78,6 +78,8 @@
 #![warn(missing_docs)]
 #![allow(clippy::style)]
 
+#![feature(stdarch_arm_neon_intrinsics)]
+
 #[cfg(feature = "std")]
 extern crate std;
 
